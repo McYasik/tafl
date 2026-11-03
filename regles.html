@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Règles du Tafl</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<main class="regles">
+    <p><a href="index.html">Retour au jeu</a></p>
+    <h1>Règles du Tafl</h1>
+    <p>Le tafl est un jeu de plateau viking, joué en Scandinavie bien avant les échecs. Deux camps inégaux s'affrontent : une petite garde autour d'un jarl (le roi), au centre, et des attaquants deux fois plus nombreux, sur les bords.</p>
+
+    <h2>Le but</h2>
+    <ul>
+        <li><strong>Défenseurs :</strong> amener le jarl sur l'un des quatre coins.</li>
+        <li><strong>Attaquants :</strong> capturer le jarl avant qu'il ne s'échappe.</li>
+    </ul>
+    <p>Les attaquants jouent en premier, puis chacun son tour.</p>
+
+    <h2>Le plateau</h2>
+    <ul>
+        <li><strong>Le trône</strong> est la case centrale, où le jarl commence.</li>
+        <li><strong>Les coins</strong> sont les sorties du jarl.</li>
+        <li>Seul le jarl peut s'arrêter sur le trône ou un coin. Toutes les pièces peuvent traverser le trône quand il est vide.</li>
+    </ul>
+    <p>Sur le plateau du jeu, trône et coins sont les cases plus sombres, marquées d'une croix.</p>
+
+    <h2>Se déplacer</h2>
+    <p>Toutes les pièces, jarl compris, se déplacent comme la tour aux échecs : en ligne droite, d'autant de cases que voulu, sans sauter par-dessus une autre pièce. Pas de diagonale.</p>
+
+    <h2>Prendre une pièce</h2>
+    <p>On prend une pièce adverse en la <strong>prenant en tenaille</strong> : on l'encadre entre deux de ses pièces, sur une même ligne ou une même colonne. Elle est retirée du plateau.</p>
+    <ul>
+        <li>La prise n'a lieu qu'au moment où l'on <strong>arrive</strong> à côté. Se placer soi-même entre deux adversaires ne fait pas prendre sa pièce.</li>
+        <li>Le trône vide et les coins comptent comme une pièce ennemie pour tout le monde : on peut prendre une pièce contre eux.</li>
+        <li>Le jarl est armé : il aide ses défenseurs à prendre.</li>
+        <li>Une pièce peut en prendre plusieurs en un seul coup, une de chaque côté.</li>
+    </ul>
+
+    <h2>Capturer le jarl</h2>
+    <p>La capture du jarl dépend de la variante (voir le tableau plus bas). Dans les deux cas, <strong>un jarl sur un bord ne peut pas être capturé</strong> : il faut alors l'encercler.</p>
+
+    <h2>Fin de partie</h2>
+    <h3>Les défenseurs gagnent si</h3>
+    <ul>
+        <li>le jarl atteint un coin ;</li>
+        <li>en Copenhague, le jarl se retranche dans un <strong>fort</strong> : sur un bord, il garde une case où bouger, et ses défenseurs l'entourent si bien que les attaquants ne peuvent plus briser le cercle ;</li>
+        <li>les attaquants ne peuvent plus faire aucun coup.</li>
+    </ul>
+    <h3>Les attaquants gagnent si</h3>
+    <ul>
+        <li>le jarl est capturé ;</li>
+        <li>ils encerclent complètement le jarl et tous ses défenseurs ;</li>
+        <li>la même position revient trois fois : les défenseurs ne peuvent pas faire durer la partie à l'infini ;</li>
+        <li>les défenseurs ne peuvent plus faire aucun coup.</li>
+    </ul>
+
+    <h2>Le mur de boucliers (Copenhague)</h2>
+    <p>Une rangée d'au moins deux pièces collées contre un bord peut être prise d'un seul coup. Il faut que l'adversaire ferme la rangée aux deux bouts, un coin pouvant tenir lieu de bout, et qu'il ait une pièce face à chacune, côté intérieur. Le jarl peut faire partie d'un mur, mais il n'est pas pris avec lui.</p>
+
+    <h2>Les deux variantes</h2>
+    <table>
+        <caption class="visuellement-cache">Différences entre Brandubh et Copenhague</caption>
+        <thead>
+            <tr>
+                <th scope="col">Règle</th>
+                <th scope="col">Brandubh 7×7</th>
+                <th scope="col">Copenhague 11×11</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Pièces</th>
+                <td>8 attaquants, 4 défenseurs et le jarl</td>
+                <td>24 attaquants, 12 défenseurs et le jarl</td>
+            </tr>
+            <tr>
+                <th scope="row">Durée</th>
+                <td>courte, idéale pour apprendre</td>
+                <td>longue, la variante de référence</td>
+            </tr>
+            <tr>
+                <th scope="row">Capture du jarl</th>
+                <td>en tenaille entre deux attaquants, comme une pièce ordinaire</td>
+                <td>encerclé sur ses quatre côtés par des attaquants, ou par trois attaquants et le trône vide</td>
+            </tr>
+            <tr>
+                <th scope="row">Mur de boucliers</th>
+                <td>non</td>
+                <td>oui</td>
+            </tr>
+            <tr>
+                <th scope="row">Fort sur le bord</th>
+                <td>non</td>
+                <td>oui</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Conseils pour débuter</h2>
+    <ul>
+        <li><strong>En défense :</strong> ouvrez des lignes vers deux coins à la fois. Les attaquants ne peuvent en boucher qu'une par coup.</li>
+        <li><strong>En attaque :</strong> verrouillez d'abord les coins en plaçant des pièces en diagonale devant eux, puis resserrez le cercle sans laisser de trou.</li>
+        <li>Avant chaque coup, regardez si votre pièce peut finir en tenaille au coup suivant.</li>
+    </ul>
+
+    <h2>Jouer au clavier</h2>
+    <p>Sur le plateau : les flèches déplacent le curseur, Début et Fin vont au bout de la ligne. Entrée ou Espace choisit une pièce, puis sa destination. Échap annule le choix. Chaque coup est annoncé aux lecteurs d'écran.</p>
+
+    <p><a href="index.html">Retour au jeu</a></p>
+</main>
+</body>
+</html>

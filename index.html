@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tafl : la fuite du jarl</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<a class="lien-evitement" href="#principal">Aller au contenu</a>
+<main id="principal">
+
+    <!-- Réglage : premier écran affiché. La ligne d'ambiance remplace l'ancienne intro. -->
+    <section id="ecran-reglage" class="ecran ecran--etroit" aria-labelledby="titre-reglage">
+        <h1 id="titre-reglage" tabindex="-1">Tafl : la fuite du jarl</h1>
+        <p class="ambiance">Le jarl est cerné dans sa halle. S'il atteint un coin, il prend la mer ; s'il tombe, le clan tombe avec lui.</p>
+        <form id="form-reglage">
+            <fieldset>
+                <legend>Variante</legend>
+                <label><input type="radio" name="variante" value="brandubh" checked> Brandubh 7×7 : partie courte, idéale pour débuter</label>
+                <label><input type="radio" name="variante" value="copenhague"> Copenhague 11×11 : la référence, partie longue</label>
+            </fieldset>
+            <fieldset>
+                <legend>Adversaire</legend>
+                <label><input type="radio" name="mode" value="ia" checked> L'ordinateur</label>
+                <label><input type="radio" name="mode" value="deux"> Deux joueurs sur cet écran</label>
+            </fieldset>
+            <fieldset id="groupe-camp">
+                <legend>Votre camp</legend>
+                <label><input type="radio" name="camp" value="Defender" checked> Les défenseurs : faire fuir le jarl</label>
+                <label><input type="radio" name="camp" value="Attacker"> Les attaquants : capturer le jarl (ils jouent en premier)</label>
+            </fieldset>
+            <fieldset id="groupe-niveau">
+                <legend>Niveau de l'ordinateur</legend>
+                <label><input type="radio" name="niveau" value="facile"> Facile</label>
+                <label><input type="radio" name="niveau" value="normal" checked> Normal</label>
+                <label><input type="radio" name="niveau" value="difficile"> Difficile : il réfléchit jusqu'à 2 secondes</label>
+            </fieldset>
+            <p class="actions">
+                <button type="submit" class="bouton bouton--principal">Lancer la partie</button>
+                <a class="bouton" href="regles.html">Lire les règles</a>
+            </p>
+        </form>
+    </section>
+
+    <!-- Partie : le plateau et le panneau d'état. -->
+    <section id="ecran-partie" class="ecran" aria-labelledby="titre-partie" hidden>
+        <h1 id="titre-partie" tabindex="-1">Partie en cours</h1>
+        <div class="partie">
+            <div class="zone-plateau">
+                <p id="aide-plateau" class="aide">Flèches pour parcourir le plateau, Entrée ou Espace pour choisir une pièce puis sa destination, Échap pour annuler.</p>
+                <div class="cadre-plateau">
+                    <div class="reperes reperes--colonnes" id="reperes-colonnes" aria-hidden="true"></div>
+                    <div class="reperes reperes--lignes" id="reperes-lignes" aria-hidden="true"></div>
+                    <div id="plateau" class="plateau" role="grid" aria-describedby="aide-plateau"></div>
+                </div>
+            </div>
+            <div class="panneau">
+                <p id="statut" class="statut"></p>
+                <!-- Refus d'un coup ou d'un choix, visible pour tous, en plus de l'annonce vocale. -->
+                <p id="message" class="message"></p>
+                <dl class="pertes">
+                    <dt>Attaquants pris</dt>
+                    <dd id="pertes-attaquants">0</dd>
+                    <dt>Défenseurs pris</dt>
+                    <dd id="pertes-defenseurs">0</dd>
+                </dl>
+                <p class="actions">
+                    <!-- aria-disabled plutôt que disabled : le bouton garde le focus quand il devient inactif. -->
+                    <button type="button" class="bouton" id="annuler" aria-disabled="true">Annuler le dernier coup</button>
+                    <button type="button" class="bouton" id="nouvelle-partie">Nouvelle partie</button>
+                    <a class="bouton" href="regles.html" target="_blank" rel="noopener">Règles (nouvel onglet)<span aria-hidden="true"> ↗</span></a>
+                </p>
+                <h2 class="panneau__titre" id="titre-journal">Coups joués</h2>
+                <!-- Zone défilante : focalisable pour être parcourue au clavier. -->
+                <div class="journal" role="region" aria-labelledby="titre-journal" tabindex="0">
+                    <ol id="journal"></ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seul canal d'annonce pour les lecteurs d'écran : sélection, coups, fin de partie. -->
+    <div id="annonce" class="visuellement-cache" aria-live="polite" aria-atomic="true"></div>
+</main>
+<script src="vendor/tafl/tafl.js"></script>
+<script src="js/ia.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
